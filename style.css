@@ -1,0 +1,463 @@
+/* ==================== RESET Y FUENTES ==================== */
+/* Reset básico para evitar problemas de margen y padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Tipografía moderna y única */
+}
+
+body {
+    background: #cad3c9;
+    color: #333;
+}
+
+/* ==================== HEADER ==================== */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: linear-gradient(90deg, #4caf50, #81c784);
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.site-header .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* espacio entre imagen y texto */
+}
+
+.logo-img {
+    height: 50px; /* Altura original de logo */
+    width: auto;
+    border-radius: 10px;
+    border: 2px solid #cddc39; /* borde amarillo verdoso */
+    box-shadow: 0 0 10px rgba(207, 232, 178, 0.6); /* brillo verdoso */
+    transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.logo-img:hover {
+    transform: scale(1.1);
+    filter: brightness(1.1);
+    box-shadow: 0 0 18px rgba(205, 220, 57, 0.8); /* más brillo en hover */
+}
+
+.site-header .logo h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    background: linear-gradient(90deg, #e5ff00, #d1f3a9, #b0c9b0); /* degradado amarillo verdoso */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #cddc39; /* fallback por si no soporta degradado */
+    transition: filter 0.3s ease;
+}
+
+.site-header .logo h1:hover {
+    filter: brightness(1.2); /* se ilumina en hover */
+}
+
+.site-header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.site-header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.site-header nav ul li a:hover {
+    color: #ffd700;
+}
+
+#cart-btn {
+    background: #fff;
+    color: #4caf50;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#cart-btn:hover {
+    background: #ffd700;
+    color: #333;
+}
+
+/* Botón de modo oscuro */
+#dark-mode-btn {
+    background: #fff;
+    color: #4caf50;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: 0.3s;
+}
+
+#dark-mode-btn:hover {
+    background: #ffd700;
+    color: #333;
+}
+
+/* ==================== HERO ==================== */
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #a8e6cf, #dcedc1);
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.hero .cta {
+    padding: 12px 25px;
+    background: #4caf50;
+    color: white;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.hero .cta:hover {
+    background: #388e3c;
+}
+
+/* ==================== SECCIONES DE PRODUCTOS ==================== */
+.category {
+    padding: 50px 20px;
+}
+
+.category h2 {
+    margin-bottom: 30px;
+    color: #4caf50;
+    text-align: center;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
+}
+
+.product {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+
+.product img {
+    width: 100%;
+    height: 150px; /* Mantenemos tamaño original para no distorsionar */
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+.product:hover img {
+    transform: scale(1.08);
+    filter: brightness(0.9);
+}
+
+.product h3 {
+    margin-bottom: 5px;
+}
+
+.product .price {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #388e3c;
+}
+
+.product button.add-to-cart {
+    padding: 8px 12px;
+    background: linear-gradient(135deg, #81c784, #4caf50);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.product button.add-to-cart:hover {
+    background: linear-gradient(135deg, #4caf50, #2e7d32);
+}
+
+/* ==================== OFERTAS ==================== */
+.offers .product {
+    background: linear-gradient(135deg, #ffb347, #ffcc33);
+    color: #333;
+}
+
+/* ==================== CARRITO ==================== */
+#cart-panel {
+    position: fixed;
+    right: -350px;
+    top: 0;
+    width: 300px;
+    height: 100%;
+    background: white;
+    box-shadow: -3px 0 10px rgba(0,0,0,0.2);
+    padding: 20px;
+    transition: right 0.3s;
+    z-index: 1001;
+}
+
+#cart-panel.open {
+    right: 0;
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#cart-items {
+    margin-top: 20px;
+    max-height: 60%;
+    overflow-y: auto;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.cart-item img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.cart-item div {
+    flex: 1;
+}
+
+.remove-btn {
+    padding: 3px 6px;
+    background: #e53935;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.remove-btn:hover {
+    background: #b71c1c;
+}
+
+#checkout {
+    margin-top: 15px;
+    width: 100%;
+    padding: 10px;
+    background: #4caf50;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#checkout:hover {
+    background: #388e3c;
+}
+
+/* ==================== CONTACTO ==================== */
+.contact {
+    text-align: center;
+    padding: 50px 20px;
+    background: #dcedc1;
+}
+
+.contact h2 {
+    margin-bottom: 15px;
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    background: #4caf50;
+    color: white;
+}
+
+/* ==================== INPUT DE CANTIDAD ==================== */
+.qty-input {
+  width: 70px;
+  padding: 6px 8px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 14px;
+  transition: all 0.2s ease-in-out;
+}
+
+.qty-input:hover {
+  border-color: #ff6600;
+  box-shadow: 0 0 6px rgba(255, 102, 0, 0.4);
+  transform: scale(1.05);
+}
+
+.qty-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+  gap: 5px;
+  font-weight: bold;
+  color: #444;
+}
+
+.qty-unit {
+  font-size: 14px;
+  color: #666;
+}
+
+/* ==================== NUEVAS SECCIONES ==================== */
+#recetas .product img,
+#testimonios .product img {
+    height: 150px; /* mismo tamaño que los productos para mantener consistencia */
+    object-fit: cover;
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 768px) {
+    .logo-img {
+        height: 45px;
+    }
+    .site-header .logo h1 {
+        font-size: 1.6rem;
+    }
+}
+/* ==================== MODO OSCURO ==================== */
+body.dark {
+  background: #121212;
+  color: #f0f0f0;
+}
+
+body.dark .site-header {
+  background: #1e1e1e;
+}
+
+body.dark .site-header nav ul li a {
+  color: #dcedc1;
+}
+
+body.dark .site-header nav ul li a:hover {
+  color: #cddc39;
+}
+
+body.dark .product {
+  background: #1c1c1c;
+  color: #f0f0f0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+body.dark .product .price {
+  color: #a5d6a7;
+}
+
+body.dark .offers .product {
+  background: linear-gradient(135deg, #b58900, #d4af37);
+  color: #f0f0f0;
+}
+
+body.dark .hero {
+  background: linear-gradient(135deg, #2e7d32, #388e3c);
+  color: #e0f2f1;
+}
+
+body.dark .contact {
+  background: #1c1c1c;
+  color: #f0f0f0;
+}
+
+body.dark footer {
+  background: #1e1e1e;
+  color: #dcedc1;
+}
+
+body.dark #cart-panel {
+  background: #1c1c1c;
+  color: #f0f0f0;
+  box-shadow: -3px 0 10px rgba(0,0,0,0.6);
+}
+
+body.dark .cart-item div {
+  color: #f0f0f0;
+}
+
+body.dark #checkout {
+  background: #81c784;
+  color: #1c1c1c;
+}
+
+body.dark #cart-btn {
+  background: #f0f0f0;
+  color: #1c1c1c;
+}
+
+body.dark #cart-btn:hover {
+  background: #cddc39;
+  color: #121212;
+}
+/* ==================== POPUP DE BIENVENIDA ==================== */
+#welcome-popup {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s;
+  z-index: 10000;
+}
+
+#welcome-popup.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+#welcome-popup .popup-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 300px;
+}
+
+.dark #welcome-popup .popup-content {
+  background: #333;
+  color: #f0f0f0;
+}
